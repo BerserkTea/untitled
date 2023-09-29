@@ -2,15 +2,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Basket {
-    List<Product> productBuy;
+    ArrayList<Product> basket;
 
-    public Basket(Product productToBuy) {
-        this.productBuy = new ArrayList<Product>();
+    public Basket() {
+        this.basket = new ArrayList<Product>();
+
+    }
+    public void addToBasket(Product product){
+        this.basket.add(product);
 
     }
 
     @Override
     public String toString() {
-        return "Basket{" + "productBuy=" + productBuy +'}';
+        return "Ваша корзина = " + basket;
     }
 }
