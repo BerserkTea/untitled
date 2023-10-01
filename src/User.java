@@ -9,10 +9,11 @@ public class User {
         this.userBasket = basket;
     }
 
-    public Product buyProduct(Product productToBuy) {
+    public void buyProduct(Catalog catalog, Product productToBuy) {
         this.userBasket.addToBasket(productToBuy);
         System.out.println("Товар " + productToBuy + " добавлен в корзину пользователя: " + this.login);
-        return productToBuy;
+        catalog.removeFromCatalog(productToBuy);
+//        return productToBuy;
     }
 
     public void showBasket() {

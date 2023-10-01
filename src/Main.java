@@ -6,7 +6,7 @@ public class Main {
         Product toilet2= new Product("toilet2", 23, 2.0);
         Product car1= new Product("car", 500, 1.0);
         Product car2= new Product("car2", 4000, 4.9);
-        Product knife23= new Product("knife1", 10, 1.0);
+        Product knife23= new Product("knife23", 190, 2.0);
         Product knife1= new Product("knife1", 10, 1.0);
         Product knife2= new Product("knife2", 230, 5.0);
 
@@ -28,23 +28,23 @@ public class Main {
         catalog.addToCatalog(knifes);
 
         catalog.showCatalog();
-
-        catalog.removeFromCatalog(knife1);
-        catalog.showCatalog();
+        System.out.println("-----------------------------------------------");
+//        catalog.removeFromCatalog(knife1);
+//        catalog.showCatalog();
 
         User user1 = new User("nagibator3000","dedmoped", new Basket());
         User user2 = new User("gruz200","dedmoped", new Basket());
         User user3= new User("Sid","dedmoped", new Basket());
         User user4 = new User("BerTea","dedmoped", new Basket());
-
+        System.out.println("-----------------------------------------------");
         //Совершил покупки, но тут прям что-то сложно пошло, мне прям непойму как один каталог для всех.
-        catalog.removeFromCatalog(user1.buyProduct(toilet2));
-        catalog.removeFromCatalog(user2.buyProduct(toster2));
-        catalog.removeFromCatalog(user3.buyProduct(car2));
-        catalog.removeFromCatalog(user4.buyProduct(knife23));
-
+        user1.buyProduct(catalog,toilet2);
+        user2.buyProduct(catalog,toster2);
+        user3.buyProduct(catalog,car2);
+        user4.buyProduct(catalog,knife23);
+        System.out.println("-----------------------------------------------");
         catalog.showCatalog();
-
+        System.out.println("-----------------------------------------------");
         user1.showBasket();
         user2.showBasket();
         user3.showBasket();
